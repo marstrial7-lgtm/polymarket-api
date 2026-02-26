@@ -37,7 +37,7 @@ def health():
 def get_balance():
     try:
         client = get_client()
-        balance = client.get_balance()
+        balance = client.get_collateral_balance()
         return jsonify({"balance": balance})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
